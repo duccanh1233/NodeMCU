@@ -1,0 +1,160 @@
+.contaner {}
+
+.header {
+    background-color: rgb(152, 192, 229);
+}
+
+.header_IOT {
+    padding-top: 10px;
+    text-align: center;
+    font-style: unset;
+    font-size: 23px;
+    font-weight: bold;
+    color: brown;
+}
+
+.header_name {
+    display: flex;
+}
+
+.name_1 {
+    width: 50%;
+    text-align: center;
+    font-style: unset;
+    color: rgb(20, 66, 111);
+}
+
+.name_2 {
+    width: 50%;
+    text-align: center;
+    font-style: unset;
+    color: rgb(20, 66, 111);
+}
+
+.content {
+    display: flex;
+    margin-top: 20px;
+}
+
+.content_left {
+    width: 50%;
+    margin-right: 20px;
+}
+
+.content_left_title {
+    background-color: rgb(152, 192, 229);
+    color: black;
+    padding: 10px;
+    padding-left: 35px;
+    font-style: italic;
+}
+
+.content_left_control {
+    background-color: rgb(214, 227, 234);
+}
+
+.content_left_control_light {
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.fa-lightbulb-o {
+    margin-right: 20px;
+}
+
+.content_right {}
+
+.content_right_control {
+    background-color: rgb(214, 227, 234);
+}
+
+.content_right_control_sub {}
+
+.right {
+    margin-left: 43px;
+    padding: 11.5px;
+}
+
+.fa-thermometer-empty {
+    margin-right: 20px;
+}
+
+.light {
+    margin-left: -25px;
+}
+
+.temp {
+    margin-left: 70px;
+}
+
+.fa-solid {}
+
+.BTN_ON {}
+
+.ONN {
+    border-radius: 5px;
+}
+
+.OFF {
+    border-radius: 5px;
+}
+
+.BTN_OFF {}
+
+.OFF {}
+
+.cursor {
+    cursor: pointer;
+}
+
+.OFF:hover {
+    background-color: rgb(189, 37, 37);
+}
+
+.OFF:focus {
+    background-color: rgb(189, 37, 37);
+}
+
+.ONN:hover {
+    background-color: rgb(31, 155, 68);
+}
+
+.ONN:focus {
+    background-color: rgb(31, 155, 68);
+}
+
+
+/*.ONN:active {
+    background-color: rgb(11, 88, 47);
+}*/
+
+.content_right {
+    width: 50%;
+    margin-left: 20px;
+}
+
+.anh {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 80px;
+    border-radius: 3px;
+}
+
+.anh1 {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 80px;
+    border-radius: 3px;
+}
+
+.anh:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.body {
+    position: relative;
+}

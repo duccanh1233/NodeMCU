@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<header>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nguyen Duc Canh</title>
+    <link rel="icon" href="https://media.istockphoto.com/id/1156597690/vi/vec-to/icon-vector-theo-phong-c%C3%A1ch-ph%E1%BA%B3ng-tr%C3%A1i-tim-bi%E1%BB%83u-t%C6%B0%E1%BB%A3ng-t%C3%ACnh-y%C3%AAu-ng%C3%A0y-valentine-%C4%91%C6%B0%E1%BB%A3c-c%C3%A1ch-ly.jpg?s=170667a&w=0&k=20&c=ps7nhL2Gn9ZBFcYhTnj6v_YWnHSs5fjS_KggViGr75o=">
+    <link rel="stylesheet" href="./asscet/scc/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</header>
+
+
+<body>
+    <div class="contaner">
+
+        <div class="header">
+
+            <div class="header_IOT"> IoT UTC2</div>
+            <div class="header_name">
+                <p class="name_1">
+                    ĐTTHCN-K60
+                </p>
+                <p class="name_2">
+                    Nguyen Duc Canh
+                </p>
+            </div>
+
+        </div>
+
+        <div class="content">
+            <div class="content_left">
+                <div class="content_left_title"> Control panel</div>
+                <div class="content_left_control">
+
+                    <div class="content_left_control_light">
+                        <div class="light">
+                            <i class="fa fa-lightbulb-o" aria-hidden="true"></i>Light 1
+                        </div>
+                        <div class="BTN_ON">
+                            <button class=" ONN cursor" onclick="bat()">ON</button>
+                        </div>
+                        <div class="BTN_OFF">
+                            <button class="OFF cursor" onclick="tat()">OFF</button>
+                        </div>
+                    </div>
+                    <div class="content_left_control_light">
+
+                        <div class="light">
+                            <i class="fa fa-lightbulb-o" aria-hidden="true"></i></i> Light 2
+                        </div>
+                        <div class="BTN_ON">
+                            <button class=" ONN cursor">ON</button>
+
+                        </div>
+                        <div class="BTN_OFF">
+                            <button class="OFF cursor">OFF</button>
+                        </div>
+                    </div>
+
+                    <div class="content_left_control_light">
+
+                        <div class="light">
+                            <i class="fa fa-lightbulb-o" aria-hidden="true"></i> Light 3
+                        </div>
+                        <div class="BTN_ON">
+                            <button class="ONN cursor">ON</button>
+
+                        </div>
+                        <div class="BTN_OFF">
+                            <button class="OFF cursor">OFF</button>
+                        </div>
+                    </div>
+
+
+                </div>
+
+            </div>
+            <div class="content_right">
+                <div class="content_left_title"> Subscription Panel
+                </div>
+                <div class="content_right_control">
+
+                    <div class="content_right_control_sub">
+                        <div class="right">
+                            <i class="fa fa-thermometer-empty" aria-hidden="true"></i> Temprature
+                            <span class="temp" id="temperature">%TEMPERATURE%</span>
+                            <sup class="units">&deg;C</sup>
+                        </div>
+                    </div>
+                    <div class="content_right_control_sub">
+                        <div class="right">
+                            <i class="fa fa-thermometer-empty" aria-hidden="true"></i> HUMIDITY
+                            <span class="temp" id="humidity">%HUMIDITY%</span>
+                            <sup class="units">&percnt;</sup>
+                        </div>
+                    </div>
+                    <div class="content_right_control_sub">
+                        <div class="right">
+                            <i class="fa fa-thermometer-empty" aria-hidden="true"></i> Temprature 1
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0yHEufecLmQMPhcJeLdqwJvJLKwj3tioE4ZpulWgAbsws9fO9SUq0RWkhmEOd9Rx0MT4&usqp=CAU" alt="" class="anh">
+    <img src="https://scontent.fsgn13-3.fna.fbcdn.net/v/t1.15752-9/341490546_176646371933910_4224069713431939155_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=ae9488&_nc_ohc=2YFr4L0PxmcAX9QKK44&_nc_ht=scontent.fsgn13-3.fna&oh=03_AdTDt8Xjp1vMx0R0Z5jGvVcIM0fP9wibHccgiCH5yO-6sw&oe=6468E5D6"
+        alt="" class="anh1">
+</body>
+<script>
+    function bat() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open('GET', '/on', true);
+        xhttp.send();
+    }
+
+    function tat() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open('GET', '/off', true);
+        xhttp.send();
+    }
+
+    setInterval(function() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("temperature").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "/temperature", true);
+        xhttp.send();
+    }, 10000);
+    setInterval(function() {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("humidity").innerHTML = this.responseText;
+            }
+        };
+        xhttp.open("GET", "/humidity", true);
+        xhttp.send();
+    }, 10000);
+</script>
+
+</html>
